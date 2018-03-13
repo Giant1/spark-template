@@ -1,0 +1,2 @@
+#提交时传入 conf/application.conf
+spark-submit --class com.ipinyou.experiment.SparkDriver --master yarn-client --conf spark.io.compression.codec=org.apache.spark.io.LZ4CompressionCodec  --conf spark.dynamicAllocation.enabled=false --conf spark.network.timeout=1200s --executor-memory 8G  --driver-memory 8G --num-executors 100 --conf spark.sql.shuffle.partitions=200 --files conf/application.conf --queue normal target/experiment-1.0-SNAPSHOT.jar
